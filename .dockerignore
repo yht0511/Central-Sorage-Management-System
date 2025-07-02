@@ -1,0 +1,43 @@
+# Git
+.git
+.gitignore
+README.md
+
+# CI/CD
+.github
+
+# Documentation
+*.md
+
+# Node modules (will be installed in container)
+frontend/node_modules
+frontend/dist
+frontend/.vite
+
+# Go modules cache
+GO/vendor
+
+# Database files (should be persistent volume)
+*.db
+data/
+
+# Python SDK (not needed for main app)
+python_sdk/
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
