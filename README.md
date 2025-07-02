@@ -37,21 +37,6 @@ docker run -d -p 8082:8082 --name Central-Storage-System yht0511/central-storage
 
 ### Docker Compose
 
-```yaml
-version: "3.8"
-services:
-  central-storage:
-    image: yht0511/central-storage-system:latest
-    ports:
-      - "8082:8082"
-    volumes:
-      - storage_data:/Program/data
-    restart: unless-stopped
-
-volumes:
-  storage_data:
-```
-
 ## 环境变量
 
 | 变量名  | 描述       | 默认值              |
