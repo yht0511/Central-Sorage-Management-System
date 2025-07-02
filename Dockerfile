@@ -17,7 +17,11 @@ COPY frontend/ ./
 RUN npm run build
 
 # 第二阶段：构建后端
-FROM golang:1.21-bullseye AS backend-builder
+FROM --platform=$BUILDPLATFORM golang:1.21-bullseye AS backend-builder
+
+# 声明构建参数
+ARG TARGETOS
+ARG TARGETARCH
 
 # 安装必要的包
 RUN apt-get update && apt-get install -y \
@@ -40,8 +44,8 @@ COPY GO/ ./
 
 # 设置构建参数
 ENV CGO_ENABLED=1
-ENV GOOS=linux
-ENV GOARCH=amd64
+ENV GOOS=$TARGETOS
+ENV GOARCH=$TARGETARCH
 
 # 构建应用
 RUN go build -a -ldflags '-linkmode external -extldflags "-static"' -o main .
