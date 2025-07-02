@@ -1,0 +1,300 @@
+/* 移动端表格通用样式 */
+
+/* 基础响应式表格样式 */
+@media (max-width: 768px) {
+  .mobile-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .el-table {
+    min-width: 800px;
+  }
+
+  .el-table__header-wrapper,
+  .el-table__body-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #ddd transparent;
+  }
+
+  .el-table__header-wrapper::-webkit-scrollbar,
+  .el-table__body-wrapper::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .el-table__header-wrapper::-webkit-scrollbar-track,
+  .el-table__body-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .el-table__header-wrapper::-webkit-scrollbar-thumb,
+  .el-table__body-wrapper::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 3px;
+  }
+}
+
+/* 移动端卡片式布局 */
+@media (max-width: 480px) {
+  .mobile-card-view .el-table,
+  .mobile-card-view .el-table__header-wrapper,
+  .mobile-card-view .el-table__body-wrapper {
+    display: none;
+  }
+
+  .mobile-cards {
+    display: block;
+  }
+
+  .mobile-card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ebeef5;
+  }
+
+  .mobile-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .mobile-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #303133;
+  }
+
+  .mobile-card-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .mobile-card-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  .mobile-card-label {
+    font-size: 14px;
+    color: #909399;
+    font-weight: 500;
+    min-width: 80px;
+  }
+
+  .mobile-card-value {
+    font-size: 14px;
+    color: #606266;
+    text-align: right;
+    flex: 1;
+    margin-left: 12px;
+  }
+
+  .mobile-card-actions {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  .mobile-card-actions .el-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* 搜索表单移动端适配 */
+@media (max-width: 768px) {
+  .search-form {
+    padding: 12px;
+  }
+
+  .search-form .el-form-item {
+    margin-bottom: 12px;
+  }
+
+  .search-form .el-form-item__label {
+    font-size: 14px;
+  }
+
+  .search-form .el-input,
+  .search-form .el-select {
+    width: 100% !important;
+  }
+
+  .search-buttons {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .search-buttons .el-button {
+    width: 100px;
+    margin: 0 8px;
+  }
+}
+
+/* 分页组件移动端适配 */
+@media (max-width: 768px) {
+  .pagination-container {
+    padding: 16px 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .el-pagination {
+    justify-content: center;
+  }
+
+  .el-pagination .el-pagination__sizes,
+  .el-pagination .el-pagination__jump {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .el-pagination .el-pager .number {
+    display: none;
+  }
+
+  .el-pagination .el-pager .number:first-child,
+  .el-pagination .el-pager .number:last-child {
+    display: inline-block;
+  }
+
+  .el-pagination .btn-prev,
+  .el-pagination .btn-next {
+    padding: 0 8px;
+  }
+}
+
+/* 操作按钮移动端适配 */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 12px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .page-header .header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .page-header .el-button {
+    flex: 1;
+    max-width: 120px;
+  }
+}
+
+/* 对话框移动端适配 */
+@media (max-width: 768px) {
+  .el-dialog {
+    width: 95% !important;
+    margin: 5vh auto !important;
+  }
+
+  .el-dialog__header {
+    padding: 16px 20px 12px;
+  }
+
+  .el-dialog__body {
+    padding: 12px 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .el-dialog__footer {
+    padding: 12px 20px 16px;
+    text-align: center;
+  }
+
+  .dialog-form .el-form-item {
+    margin-bottom: 16px;
+  }
+
+  .dialog-form .el-form-item__label {
+    font-size: 14px;
+    line-height: 32px;
+  }
+
+  .dialog-form .el-input,
+  .dialog-form .el-select,
+  .dialog-form .el-textarea {
+    width: 100%;
+  }
+}
+
+/* 统计卡片移动端适配 */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .stat-card {
+    padding: 16px !important;
+  }
+
+  .stat-card .stat-value {
+    font-size: 24px !important;
+  }
+
+  .stat-card .stat-label {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 通用间距调整 */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 12px !important;
+  }
+
+  .content-card {
+    margin-bottom: 12px !important;
+    padding: 12px !important;
+  }
+
+  .el-card__body {
+    padding: 16px !important;
+  }
+}
+
+/* 表单验证提示移动端适配 */
+@media (max-width: 768px) {
+  .el-form-item__error {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+/* Loading 状态移动端适配 */
+@media (max-width: 768px) {
+  .el-loading-mask {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .el-loading-spinner {
+    margin-top: -20px;
+  }
+
+  .el-loading-text {
+    font-size: 14px;
+  }
+}

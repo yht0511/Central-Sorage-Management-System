@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  central_storage_system:
+    build: .
+    ports:
+      - "8082:8082"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data:/Program/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8082/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  data:
