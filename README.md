@@ -32,7 +32,7 @@
 ### 快速启动
 
 ```bash
-docker run -d -p 8082:8082 --name central-storage your-dockerhub-username/central-storage-system:latest
+docker run -d -p 8082:8082 --name Central-Storage-System yht0511/central-storage-system:latest
 ```
 
 ### Docker Compose
@@ -41,7 +41,7 @@ docker run -d -p 8082:8082 --name central-storage your-dockerhub-username/centra
 version: "3.8"
 services:
   central-storage:
-    image: your-dockerhub-username/central-storage-system:latest
+    image: yht0511/central-storage-system:latest
     ports:
       - "8082:8082"
     volumes:
@@ -57,7 +57,7 @@ volumes:
 | 变量名  | 描述       | 默认值              |
 | ------- | ---------- | ------------------- |
 | PORT    | 服务端口   | 8082                |
-| DB_PATH | 数据库路径 | ./storage_system.db |
+| DB_PATH | 数据库路径 | ./data/storage_system.db |
 
 ## API 端点
 
@@ -74,7 +74,7 @@ volumes:
 1. 克隆仓库
 
 ```bash
-git clone https://github.com/your-username/central-storage-system.git
+git clone https://github.com/yht0511/central-storage-system.git
 cd central-storage-system
 ```
 
